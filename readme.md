@@ -1,5 +1,10 @@
 ![](https://github.com/MomsFriendlyRobotCompany/thundercougarfalconbird/raw/main/pics/eddy.png)
 
+![GitHub](https://img.shields.io/github/license/MomsFriendlyRobotCompany/thundercougarfalconbird)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/thundercougarfalconbird)
+![PyPI](https://img.shields.io/pypi/v/thundercougarfalconbird)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/thundercougarfalconbird?color=aqua)
+
 # Just one word, `thundercougarfalconbird`
 
 **under development**
