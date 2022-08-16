@@ -1,6 +1,8 @@
-![](pics/eddy.png)
+![](https://github.com/MomsFriendlyRobotCompany/thundercougarfalconbird/raw/main/pics/eddy.png)
 
 # Just one word, `thundercougarfalconbird`
+
+**under development**
 
 # MIT License
 

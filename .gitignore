@@ -5,3 +5,4 @@
 dist
 archive
 old
+__pycache__
