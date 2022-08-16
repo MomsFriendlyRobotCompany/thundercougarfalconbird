@@ -9,6 +9,14 @@
 
 **under development**
 
+Some of the dynamical models available are:
+
+- `DifferentialDriveKinematics`
+- `Drone`
+    - `ParrotDrone`
+
+The list of imported packages can be found in the [pyproject.toml][toml].
+
 # MIT License
 
 **Copyright (c) 2022 Mom's Friendly Robot Company**
@@ -30,3 +38,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[toml]: https://github.com/MomsFriendlyRobotCompany/thundercougarfalconbird/blob/main/pyproject.toml

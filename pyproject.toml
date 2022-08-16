@@ -25,6 +25,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.8"
 numpy = "*"
+squaternion = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
