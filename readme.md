@@ -1,3 +1,3 @@
 ![](pics/eddie.png)
 
-# Just one word, `thundarcougarfalconbird`
+# Just one word, `thundercougarfalconbird`
