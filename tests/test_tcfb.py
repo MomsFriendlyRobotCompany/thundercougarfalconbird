@@ -13,7 +13,17 @@ def test_wheeled():
 
 
 def test_uav():
-    assert ParrotDrone()
+    ParrotDrone()
 
     with pytest.raises(Exception):
         r = Drone()
+
+
+def test_simple():
+    Vanderpol(5)
+    with pytest.raises(TypeError):
+        Vanderpol()
+
+    MassSpringDampener(1,2,3)
+    with pytest.raises(TypeError):
+        MassSpringDampener()
