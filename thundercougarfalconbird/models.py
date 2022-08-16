@@ -41,6 +41,12 @@ class DifferentialDriveKinematics:
 
         return ret
 
+
+class RoombaCreate(DifferentialDriveKinematics):
+    def __init__(self):
+        super().__init__(0.070, 0.235)
+
+
 @dataclass
 class PointMass:
 
