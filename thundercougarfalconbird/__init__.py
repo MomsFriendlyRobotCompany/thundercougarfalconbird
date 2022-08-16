@@ -6,7 +6,9 @@
 ##############################################
 from importlib.metadata import version
 
-from .models import DifferentialDriveKinematics
+from .models import DifferentialDriveKinematics, RoombaCreate
+from .simple import Vanderpol, MassSpringDampener
+from .uav import Drone, ParrotDrone
 
 __license__ = 'MIT'
 __author__ = 'Kevin Walchko'
