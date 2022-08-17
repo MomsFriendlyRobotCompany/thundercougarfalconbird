@@ -14,6 +14,7 @@ Some of the dynamical models available are:
 - `DifferentialDriveKinematics`
 - `Drone`
     - `ParrotDrone`
+- `MassSpringDamper`
 
 The list of imported packages can be found in the [pyproject.toml][toml].
 

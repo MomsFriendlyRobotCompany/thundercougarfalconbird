@@ -7,7 +7,7 @@
 from importlib.metadata import version
 
 from .models import DifferentialDriveKinematics, RoombaCreate
-from .simple import Vanderpol, MassSpringDampener
+from .simple import Vanderpol, MassSpringDamper
 from .uav import Drone, ParrotDrone
 
 __license__ = 'MIT'
