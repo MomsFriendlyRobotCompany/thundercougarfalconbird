@@ -7,8 +7,9 @@
 from importlib.metadata import version
 
 from .models import DifferentialDriveKinematics, RoombaCreate
-from .simple import Vanderpol, MassSpringDampener
+from .simple import Vanderpol, MassSpringDamper
 from .uav import Drone, ParrotDrone
+from .space import Satellite, SatelliteWithWheels
 
 __license__ = 'MIT'
 __author__ = 'Kevin Walchko'

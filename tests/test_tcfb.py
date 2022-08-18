@@ -24,6 +24,6 @@ def test_simple():
     with pytest.raises(TypeError):
         Vanderpol()
 
-    MassSpringDampener(1,2,3)
+    MassSpringDamper(1,2,3)
     with pytest.raises(TypeError):
-        MassSpringDampener()
+        MassSpringDamper()

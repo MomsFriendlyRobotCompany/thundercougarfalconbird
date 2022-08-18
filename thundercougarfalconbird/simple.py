@@ -27,10 +27,13 @@ class Vanderpol:
 
 
 @dataclass
-class MassSpringDampener:
+class MassSpringDamper:
+    """
+    state: [velocity, position]
+    """
     mass: float
     springConst: float
-    dampeningCoeff: float
+    dampingCoeff: float
 
     def eqns(self, dt, xi, u):
         """
@@ -38,13 +41,13 @@ class MassSpringDampener:
         xi: states
         u: control signal
         """
-        dx, x = xi
+        vel, pos = xi
 
         m = self.mass
         k = self.springConst
-        d = self.dampenerCoeff
+        c = self.dampingCoeff
 
-        ddx = (u - d*dx - k*x)/m
-        dx = dx
+        # m*accel + c*vel + k*pos = u
+        accel = (u - c*vel - k*pos)/m
 
-        return np.array([ddx, dx])
+        return np.array([accel, vel])
