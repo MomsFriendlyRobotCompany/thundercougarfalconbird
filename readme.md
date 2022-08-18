@@ -9,12 +9,20 @@
 
 **under development**
 
-Some of the dynamical models available are:
+Crazy Eddy has a number of useful models for simulation:
 
-- `DifferentialDriveKinematics`
-- `Drone`
-    - `ParrotDrone`
-- `MassSpringDamper`
+- Simple systems:
+    - [`Vanderpol`](https://en.wikipedia.org/wiki/Van_der_Pol_oscillator)
+    - [`MassSpringDamper`](https://en.wikipedia.org/wiki/Mass-spring-damper_model)
+- Wheeled vehicles
+    - [`DifferentialDriveKinematics`](https://en.wikipedia.org/wiki/Differential_wheeled_robot): generic
+        - `RoombaCreate`
+- UAV
+    - `Drone`: generic
+        - `ParrotDrone`
+- Space
+    - `Satellite`: simple attitude control
+    - `SatelliteWithWheels`: attitude control with wheel dynamics
 
 The list of imported packages can be found in the [pyproject.toml][toml].
 

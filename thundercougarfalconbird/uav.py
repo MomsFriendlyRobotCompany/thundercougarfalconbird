@@ -11,19 +11,26 @@ from squaternion import Quaternion
 
 # @dataclass
 class Drone:
-    def __init__(self, params=None):
-        if params is None:
-            # params = {}
-            # params = {
-            #     'm': 0.329,
-            #     'l': 0.1785,
-            #     'J': [2.238e-3, 2.986e-3, 4.804e-3],
-            #     'kf': 7.00e-7,
-            #     'km': 2.423e-6,
-            #     'tau': 4.718e-3,
-            #     'nmax': 1047
-            # }
-            raise Exception("No parameters given")
+    def __init__(self, params):
+        """
+        m: mass [kg]
+        l: motor arm length [m]
+        J: rotational moment of inertia [kg*m^2]
+        kf: motor const
+
+        """
+        # if params is None:
+        #     # params = {}
+        #     # params = {
+        #     #     'm': 0.329,
+        #     #     'l': 0.1785,
+        #     #     'J': [2.238e-3, 2.986e-3, 4.804e-3],
+        #     #     'kf': 7.00e-7,
+        #     #     'km': 2.423e-6,
+        #     #     'tau': 4.718e-3,
+        #     #     'nmax': 1047
+        #     # }
+        #     raise Exception("No parameters given")
         # if not isinstance(params, dict):
         #     raise Exception("Parameters are not a dictionary")
 
@@ -32,9 +39,8 @@ class Drone:
         self.J = params['J']
         self.kf = params['kf']
         self.L = params['l']
-        # self.g = 9.81
 
-        self.q = Quaternion()
+        # self.q = Quaternion()
 
     def eqns(self, t, x, u):
         """
@@ -50,9 +56,13 @@ class Drone:
         n1,n2,n3,n4 = u
 
         # R converts body to inertial
-        R = np.array(self.q.to_rot())
+        # R = np.array(self.q.to_rot())
+        q = Quaternion(*x[9:])
+        R = np.array(q.to_rot())
+
+        # WARN: should I be converting to inertial space?
         # convert inertial gravity to body frame, hence R.T
-        g = R.T @ np.array([0,0,9.81])
+        g = R.T @ np.array([0,0,9.8])
 
         Jx, Jy, Jz = self.J
 
@@ -82,7 +92,7 @@ class Drone:
 
         ans[:3] = v  # dot pos
         ans[3:6] = F/m+g - np.cross(w,v) # dot vel
-        ans[6:9] = MJ-wJw                         # dot w
+        ans[6:9] = MJ-wJw                # dot w
 
         q = Quaternion(*x[9:])
         w = Quaternion(0,*w)
