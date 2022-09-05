@@ -57,12 +57,13 @@ class Drone:
 
         # R converts body to inertial
         # R = np.array(self.q.to_rot())
-        q = Quaternion(*x[9:])
-        R = np.array(q.to_rot())
+        qq = Quaternion(*x[9:])
+        R = np.array(qq.to_rot())
 
         # WARN: should I be converting to inertial space?
         # convert inertial gravity to body frame, hence R.T
-        g = R.T @ np.array([0,0,9.8])
+        # g = R.T @ np.array([0,0,9.8])
+        g = np.array([0,0,9.8])
 
         Jx, Jy, Jz = self.J
 
@@ -91,12 +92,12 @@ class Drone:
         w = x[6:9]
 
         ans[:3] = v  # dot pos
-        ans[3:6] = F/m+g - np.cross(w,v) # dot vel
+        ans[3:6] = R.dot(F)/m+g # - np.cross(w,v) # dot vel
         ans[6:9] = MJ-wJw                # dot w
 
-        q = Quaternion(*x[9:])
+        # q = Quaternion(*x[9:])
         w = Quaternion(0,*w)
-        ans[9:] = 0.5*q*w # dot q
+        ans[9:] = 0.5*qq*w # dot q
 
         return ans
 
