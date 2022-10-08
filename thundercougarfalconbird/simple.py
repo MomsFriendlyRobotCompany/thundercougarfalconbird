@@ -10,9 +10,16 @@ import numpy as np
 @dataclass
 class Vanderpol:
     """
-    Vanderpol Oscillator
+    The Van der Pol oscillator is a non-conservative oscillator
+    with non-linear damping. It evolves in time according to the
+    second-order differential equation:
 
-    mu: dampening parameter
+    ddx = mu*(1-x^2)*dx-x
+
+    where x is position, dx is velocity, ddx is acceleration, and
+    mu is the nonlinear dampening coefficient.
+
+    https://en.wikipedia.org/wiki/Van_der_Pol_oscillator
     """
     dampeningCoeff: float
 
