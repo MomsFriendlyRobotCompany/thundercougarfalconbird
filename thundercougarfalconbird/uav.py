@@ -16,8 +16,8 @@ class Drone:
         m: mass [kg]
         l: motor arm length [m]
         J: rotational moment of inertia [kg*m^2]
-        kf: motor const
-
+        kf: motor force const
+        km: motor torque const
         """
         # if params is None:
         #     # params = {}
@@ -31,8 +31,8 @@ class Drone:
         #     #     'nmax': 1047
         #     # }
         #     raise Exception("No parameters given")
-        # if not isinstance(params, dict):
-        #     raise Exception("Parameters are not a dictionary")
+        if not isinstance(params, dict):
+            raise Exception("Parameters are not a dictionary")
 
         self.m = params.get('m', 1)
         self.gg = params['km'] / params['kf']
